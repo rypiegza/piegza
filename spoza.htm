@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV=REFRESH CONTENT=4;URL=http://www.wizya.net/totu.htm>
+<title>tapis in</title>
+<style>
+body{
+scrollbar-base-color:#333333
+}
+</style>
+<script language="JavaScript">
+var t = 0.0
+var NN = document.layers
+var IE = document.all
+
+function fly()
+{
+	if(NN)
+	{
+		xPos = window.innerWidth/2 - 50
+		yPos = window.innerHeight/2 - 5
+		xAmpl = window.innerWidth/3
+		yAmpl = window.innerHeight/3
+	}
+	else if(IE)
+	{
+		xPos = document.body.clientWidth/2 - 50
+		yPos = document.body.clientHeight/2 - 5
+		xAmpl = document.body.clientWidth/3
+		yAmpl = document.body.clientHeight/3
+	}
+	x = xPos + xAmpl*Math.sin(20*Math.sin(t/30))*(Math.sin(10+t/10)+0.2)*Math.cos(t/10)
+	y = yPos + yAmpl*Math.cos(20*Math.sin(t/30))*(Math.sin(10+t/10)+0.2)*Math.cos(t/10)
+	if(NN)
+	{
+		document.layers["fly"].moveTo(x,y)
+	}
+	else if(IE)
+	{
+		obj = document.all.fly.style
+		obj.pixelLeft = x			
+		obj.pixelTop = y			
+	}
+	t += 1.0
+	setTimeout("fly()", 50)
+}
+</script>
+</head>
+<body text="#FFFFFF" bgcolor="#333333" link="#FFFFFF" vlink="#FFFFFF" alink="#000000" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<p><script language="JavaScript">
+<!--
+function noright(){
+if(event.button==2){
+alert("  SITTING QUIETLY, DOING NOTHING  !")
+}
+}
+document.onmousedown=noright
+// --></script>
+<div style="z-index:-1"><img src="inter4-11m.jpg" width="935" height="504" border="0">
+</div>
+<div id="fly" style="width:200px; height:200px; position:absolute; left:0px; top:0px; z-index:1; overflow: visible"> 
+  <form method="GET" action="http://www.wizya.net/vol.htm" name="">
+    <img src="../kre-trans.gif">
+</form>
+</div>
+<script language="JavaScript">
+fly()
+</script>
+<A href="javascript:history.back()"><FONT face=Verdana size=1><IMG height=16 
+src="strzala.gif" width=34 border=0></FONT></A></body>
+</html>
